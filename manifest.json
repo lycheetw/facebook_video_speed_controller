@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+  "default_locale": "en",
+  "page_action" : {
+      "default_icon" : "icon.png"
+  },
+  "name": "__MSG_extName__",
+  "description": "__MSG_extDescription__",
+  "version": "0.0.3",
+
+  "permissions": [
+    "http://www.facebook.com/*",
+    "https://www.facebook.com/*"
+  ],
+
+  "web_accessible_resources" : [
+  ],
+  "content_scripts" : [
+    {
+      "matches": [
+        "http://www.facebook.com/*",
+        "https://www.facebook.com/*"
+      ],
+      "js": [
+         "main.js"
+      ],
+      "css": [
+      ],
+      "run_at" : "document_idle",
+      "all_frames" : false
+    }
+  ],
+  "icons" : {
+    "128" : "icon.png"
+  }
+}

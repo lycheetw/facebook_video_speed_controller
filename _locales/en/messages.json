@@ -1,0 +1,10 @@
+{
+  "extName": {
+    "message": "Facebook video speed controller",
+    "description": "Extension Name"
+  },
+  "extDescription": {
+    "message": "Let you change video speed in Facebook",
+    "description": "Extension description"
+  }
+}

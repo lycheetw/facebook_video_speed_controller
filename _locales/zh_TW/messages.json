@@ -1,0 +1,10 @@
+{
+  "extName": {
+    "message": "FB影片加速器",
+    "description": "Extension Name"
+  },
+  "extDescription": {
+    "message": "讓你可以控制FB的影片播放速度",
+    "description": "Extension description"
+  }
+}
