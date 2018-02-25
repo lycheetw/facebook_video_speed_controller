@@ -22,7 +22,8 @@
         "https://www.facebook.com/*"
       ],
       "js": [
-         "main.js"
+        "VideoManager.js",
+        "main.js"
       ],
       "css": [
       ],
