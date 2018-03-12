@@ -6,18 +6,22 @@ const MutationObserver = window.MutationObserver || window.WebKitMutationObserve
 
 const observer = new MutationObserver(mutations => {
   mutations.forEach(async function(mutation) {
-      if(mutation.target.nodeName !== "VIDEO") return;
-      if(mutation.target.hasAttribute("_mark")) return;
-
-      const videoContainer = mutation.target.parentNode;
-      
+      if(mutation.target.className !== "_2j04") return;
+      console.log(mutation.target)
+      const videoContainer = findVideoContainer(mutation.target);
       const manager = VideoManager.fromHtml(videoContainer);
       if(manager === null) return;
-      
       manager.insertRateButtons(RATE_LIST);
   });    
 });
 
+function findVideoContainer(node) {
+  var t = node;
+  while(t.children[0].nodeName !== "VIDEO"){
+    t = t.parentNode
+  }
+  return t
+}
 
 const config = {  childList: true, subtree: true, characterData: true, attributes: true };
 observer.observe(document, config);

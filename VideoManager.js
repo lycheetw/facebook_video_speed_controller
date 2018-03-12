@@ -7,18 +7,29 @@ class VideoManager {
 
     const settingBlock = this.settingBlock;
     //Add rate button into setting block
+    const div = document.createElement("div");
     for(let rate of rateList) {
       const a = document.createElement("a");
       a.setAttribute("rate", rate);
-      a.className = "_4v8v";
-      a.innerHTML = `<div class="_2xyg"><div class="${rate === 1 ? VideoManager._SELECTED_CLASS_NAME: ""}"></div></div><div class="_4v8x">${rate}x</div>`;
+      a.setAttribute("aria-checked", false);
+      a.setAttribute("role", "radio");
+      a.className = "_2iw4";
+      a.innerHTML = `<div class="_4t7u"><div class="${rate === 1 ? VideoManager._SELECTED_CLASS_NAME: ""}"></div></div><div class="_2iw5">${rate}x</div>`;
       a.addEventListener("click", () => this.setRate(rate));
-      
-      const len = settingBlock.childNodes.length;
-      settingBlock.insertBefore(a, settingBlock.childNodes[len - 1]);
+      div.appendChild(a);
     }
-
-    //Mark this video has been processed
+    const len = settingBlock.childNodes.length;
+    settingBlock.insertBefore(div, settingBlock.childNodes[0]);
+    settingBlock.addEventListener("click", (e) => {
+      setTimeout(() => {
+        if(settingBlock.querySelector("._4t9q").nodeName == "DIV" ) {
+          div.hidden = true;
+        } else {
+          div.hidden = false
+        }
+      }, 5);
+      
+    }, true);
     this.video.setAttribute(VideoManager._MARK, 1);
   }
 
@@ -32,11 +43,11 @@ class VideoManager {
   }
 } 
 
-VideoManager._SELECTED_CLASS_NAME = "_2xyd";
+VideoManager._SELECTED_CLASS_NAME = "_4t7r";
 VideoManager._MARK = "_mark";
 
 VideoManager.fromHtml = function(htmlNode) {
-  const settingBlock = htmlNode.querySelector("._28h1");
+  const settingBlock = htmlNode.querySelector("._2i_x");
   const video = htmlNode.querySelector("video");
 
   if(settingBlock === null || video === null) return null;
