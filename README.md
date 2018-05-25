@@ -6,7 +6,8 @@ A chrome extension let you change video speed in Facebook
 ## How
 The main idea is using html5 video tag to control playing speed.
 1. Using `MutationObserver` to catch new video block when user scrolling web page.
-2. Adding control panel into setting block
+2. Adding speed option into setting block
+3. Using `video.playbackRate` to speed up/down playing speed.
 
 
 ## TODO
