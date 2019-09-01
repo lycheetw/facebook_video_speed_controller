@@ -1,7 +1,8 @@
 # Facebook video speed controller
 A chrome extension let you change video speed in Facebook
 
-[Web store](https://chrome.google.com/webstore/detail/fnacfacghijplbkdbohijibfpldedpeb)
+## Screenshots
+![alt tag](https://raw.githubusercontent.com/lycheetw/facebook_video_speed_controller/master/images/screenshot.png)
 
 ## How
 The main idea is using html5 video tag to control playing speed.
